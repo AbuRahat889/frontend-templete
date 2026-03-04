@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Urbanist } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/redux/provider/ReduxProvider";
+import { Toaster } from "sonner";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${urbanist.variable} ${poppins.variable} antialiased`}>
         <ReduxProvider>
+          <Toaster />
           <div>{children}</div>
         </ReduxProvider>
       </body>
